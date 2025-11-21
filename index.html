@@ -22,7 +22,7 @@
   <body>
     <header class="header">
       <div class="header__content-wrapper">
-        <h1 class="header__title">My Tasks</h1>
+        <a href="#" onclick="location.reload();"><h1 class="header__title">My Tasks</h1></a>
         <div class="header__img-wrapper">
           <svg 
           class="header__svg"
@@ -32,15 +32,15 @@
     <main class="main">
       <div class="main__content-wrapper container">
         <div class="main__task-wrapper">
-          <input type="text" placeholder="Type your task here.." />
+          <input type="text" placeholder="Give a name to your task list!" />
           <button class="main__button">+ Add</button>
         </div>
         <div class="main__todo-wrapper">
           <div class="main__image-wrapper">
-            <img src="/img/empty.png" alt="Empty box with a flying bug above" />
+            <img src="./img/empty.png" alt="Empty box with a flying bug above" />
           </div>
           <p class="main__p">
-            It seems like there's nothing happening yet.. Try to do something
+            It seems like there's nothing happening yet.. <br> Try to do something
             with it!
           </p>
         </div>
@@ -48,7 +48,7 @@
     </main>
     <footer class="footer">
       <div class="footer__content-wrapper container">
-        <p class="footer__copy"><span>&copy;</span>2025 Rommchy</p>
+        <p class="footer__copy"></p>
       </div>
     </footer>
     <script src="index.js"></script>

@@ -2,12 +2,9 @@
 
 const moonBtn = document.querySelector(".header__svg");
 const body = document.querySelector("body");
-const mainHeader = document.querySelector("h1");
 
 moonBtn.addEventListener("click", function () {
   body.classList.toggle("dark");
-  mainHeader.classList.toggle("dark");
-  moonBtn.classList.toggle("dark");
 });
 
 // TODO FUNCTIONALITY
@@ -18,10 +15,18 @@ const mainImgWrp = document.querySelector(".main__image-wrapper");
 const mainP = document.querySelector(".main__p");
 
 const addBtn = document.querySelector(".main__button");
-addBtn.addEventListener("click", function () {
-  if (input.value === "") {
-    return alert("You can't create empty task list!");
+
+function checkIfEmpty(variable, message) {
+  if (variable.value.trim() === "") {
+    alert(message);
+    return true;
   }
+  return false;
+}
+
+function addTaskRecord() {
+  if (checkIfEmpty(input, "You can't create empty task list!")) return;
+
   const div = document.createElement("div");
   div.classList.add("main__todo-element-wrapper");
   const details = document.createElement("details");
@@ -38,7 +43,9 @@ addBtn.addEventListener("click", function () {
   addIcon.classList.add("main__add-icon");
   addIcon.src = "img/plus-icon.png";
   addIcon.addEventListener("click", function () {
+    if (checkIfEmpty(createdInput, "You can't create an empty task!")) return;
     const li = document.createElement("li");
+    li.textContent = `${createdInput.value}`;
     ul.appendChild(li);
   });
 
@@ -55,6 +62,25 @@ addBtn.addEventListener("click", function () {
   div.appendChild(addIcon);
   div.appendChild(basketIcon);
   details.appendChild(summary);
-  summary.appendChild(ul);
+  details.appendChild(ul);
+  const createdInput = document.createElement("input");
+  createdInput.placeholder = "Type your task here...";
+  details.appendChild(createdInput);
   input.value = "";
+}
+
+addBtn.addEventListener("click", addTaskRecord);
+
+input.addEventListener("keydown", (e) => {
+  console.log(e);
+  if (e.key === "Enter") {
+    addTaskRecord();
+  }
 });
+
+//COPY YEAR
+const currentDate = new Date();
+const currentYear = currentDate.getFullYear();
+
+const footerP = document.querySelector(".footer__copy");
+footerP.innerHTML = `<span>&copy;</span> ${currentYear} Rommchy`;

@@ -90,7 +90,7 @@ a {
   letter-spacing: 3.4px;
 }
 
-.header__title.dark {
+.dark .header__title {
   color: var(--color-heading-dark);
 }
 
@@ -109,7 +109,7 @@ a {
   color: #1c274c;
 }
 
-.header__svg.dark:hover {
+.dark .header__svg:hover {
   color: #fff;
 }
 
@@ -122,11 +122,22 @@ input {
   transition: all 0.2s ease;
 }
 
+.dark input {
+  background-color: #333333;
+  color: #fff;
+}
+
 input:focus {
   outline: none;
   border: 1px solid rgb(110, 110, 110);
   box-shadow: 0 0 6px rgb(110, 110, 110);
   transform: scale(1.02);
+}
+
+.dark input:focus {
+  border: 1px solid rgb(255, 255, 255);
+  box-shadow: 0 0 6px rgb(255, 255, 255);
+  background-color: #333333;
 }
 
 .main__button {
@@ -198,12 +209,22 @@ body.dark {
   color: black;
 }
 
+.dark .main__todo-element {
+  width: 531px;
+  padding: 10px 20px;
+  color: #fff;
+}
+
 .main__todo-element-wrapper {
   display: flex;
   flex-direction: row;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 0 2px 2px;
+}
+
+.dark .main__todo-element-wrapper {
+  background-color: #333333;
 }
 
 .main__add-icon {
@@ -218,8 +239,20 @@ body.dark {
   cursor: pointer;
 }
 
+.dark .main__add-icon {
+  color: white;
+}
+
+.dark .main__basket-icon {
+  color: white;
+}
+
 summary {
   /* list-style: none; */
   padding: 5px;
   cursor: pointer;
 }
+
+/* ul {
+  /* list-style: none; 
+} */
