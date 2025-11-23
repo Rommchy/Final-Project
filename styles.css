@@ -113,7 +113,8 @@ a {
   color: #fff;
 }
 
-input {
+.main__input,
+.main__created-input {
   padding: 10px 10px;
   height: 40px;
   width: 400px;
@@ -122,19 +123,22 @@ input {
   transition: all 0.2s ease;
 }
 
-.dark input {
+.dark .main__input,
+.dark .main__created-input {
   background-color: #333333;
   color: #fff;
 }
 
-input:focus {
+.main__input:focus,
+.main__created-input:focus {
   outline: none;
   border: 1px solid rgb(110, 110, 110);
   box-shadow: 0 0 6px rgb(110, 110, 110);
   transform: scale(1.02);
 }
 
-.dark input:focus {
+.dark .main__input:focus,
+.dark .main__created-input:focus {
   border: 1px solid rgb(255, 255, 255);
   box-shadow: 0 0 6px rgb(255, 255, 255);
   background-color: #333333;
@@ -253,6 +257,33 @@ summary {
   cursor: pointer;
 }
 
-/* ul {
-  /* list-style: none; 
+ul {
+  list-style: none;
+}
+
+.main__element-li {
+  padding: 10px 0;
+  padding-left: 40px;
+}
+
+.main__created-input {
+  margin: 10px 0px 10px 35px;
+  width: 100%;
+}
+
+/* .main__element-checkbox {
+} */
+
+.main__element-label {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.checked {
+  text-decoration: line-through;
+}
+
+/* .dark .checked {
+  text-decoration-color: #000;
 } */
