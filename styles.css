@@ -10,6 +10,8 @@
   --font-main: "Roboto", sans-serif;
   --font-accent: "Ubuntu", sans-serif;
 
+  --font-sizeMobile: 14px;
+
   /* DARK THEME */
   --color-text-dark: #aaa8b1;
   --color-heading-dark: #fff;
@@ -30,6 +32,129 @@ canvas,
 svg {
   display: block;
   max-width: 100%;
+}
+
+@media (max-width: 426px) {
+  .header {
+    margin: 10px;
+    margin-bottom: 15px;
+  }
+
+  body {
+    font-size: var(--font-sizeMobile);
+  }
+
+  .main__input,
+  .main__created-input {
+    width: 250px;
+    height: 30px;
+  }
+
+  .main__todo-wrapper {
+    min-height: 250px;
+  }
+
+  .main__task-wrapper {
+    margin-bottom: 50px;
+  }
+
+  .main {
+    margin-bottom: 160px;
+  }
+
+  .main__todo-element {
+    width: 250px;
+  }
+
+  .main__task-wrapper {
+    gap: 20px;
+  }
+
+  .main__button {
+    padding: 6px 12.5px;
+  }
+
+  .main__todo-wrapper {
+    margin: 0 20px;
+  }
+
+  .main__todo-wrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .main__p {
+    text-align: center;
+  }
+
+  .main__add-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .main__basket-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .main__todo-element {
+    padding: 5px 10px;
+  }
+}
+
+@media (min-width: 426px) {
+  .header {
+    margin: 10px;
+    margin-bottom: 150px;
+  }
+
+  .main__input,
+  .main__created-input {
+    width: 400px;
+    height: 40px;
+  }
+
+  .main__todo-wrapper {
+    min-height: 512px;
+  }
+
+  .main__task-wrapper {
+    margin-bottom: 100px;
+  }
+
+  .main {
+    margin-bottom: 370px;
+  }
+
+  .main__todo-element {
+    width: 531px;
+  }
+
+  .main__task-wrapper {
+    gap: 50px;
+  }
+
+  .main__button {
+    padding: 10px 20px;
+  }
+
+  .main__todo-wrapper {
+    flex-direction: row;
+  }
+
+  .main__add-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .main__basket-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .main__todo-element {
+    padding: 10px 20px;
+  }
 }
 
 body {
@@ -71,8 +196,6 @@ a {
 
 .header {
   border-radius: 16px;
-  margin: 10px;
-  margin-bottom: 150px;
 }
 
 .header__content-wrapper {
@@ -116,8 +239,6 @@ a {
 .main__input,
 .main__created-input {
   padding: 10px 10px;
-  height: 40px;
-  width: 400px;
   box-shadow: 0 1px 1px 1px rgb(160, 158, 158);
   border-radius: 8px;
   transition: all 0.2s ease;
@@ -149,7 +270,6 @@ a {
   color: #fff;
   font-size: 15px;
   border-radius: 8px;
-  padding: 10px 20px;
   background-color: #000;
   transition: all 0.3s ease;
 }
@@ -157,10 +277,6 @@ a {
 .main__button:hover {
   color: #000;
   background-color: #fff;
-}
-
-.main {
-  margin-bottom: 370px;
 }
 
 .main__content-wrapper {
@@ -175,16 +291,12 @@ a {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-bottom: 100px;
-  gap: 50px;
 }
 
 .main__todo-wrapper {
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
-  min-height: 512px;
 }
 
 .main__todo-wrapper.active {
@@ -196,6 +308,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: end;
+  margin-bottom: 30px;
 }
 
 body.dark {
@@ -208,14 +321,10 @@ body.dark {
 }
 
 .main__todo-element {
-  width: 531px;
-  padding: 10px 20px;
   color: black;
 }
 
 .dark .main__todo-element {
-  width: 531px;
-  padding: 10px 20px;
   color: #fff;
 }
 
@@ -232,14 +341,10 @@ body.dark {
 }
 
 .main__add-icon {
-  width: 60px;
-  height: 60px;
   cursor: pointer;
 }
 
 .main__basket-icon {
-  width: 60px;
-  height: 60px;
   cursor: pointer;
 }
 
